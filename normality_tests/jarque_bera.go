@@ -1,3 +1,7 @@
+// Package normality_tests
+// Normality tests are tests used to decide whether a distribution is normally distributed.
+// Some methods used for the AB Testing are based on the assumption that the distribution is normal.
+// Therefore, it is important to test the normality of the distribution.
 package normality_tests
 
 import (
@@ -6,6 +10,12 @@ import (
 	"math"
 )
 
+/*
+JarqueBera is one of the tests used to examine the normality of a distribution.
+For the Normal Distribution, the measure of curvature calculated with the moments is 0 and the measure of kurtosis is 3.
+The Jarque Bera test was developed based on these measures.
+For more information https://en.wikipedia.org/wiki/Jarque–Bera_test
+*/
 func JarqueBera(data []float64) (float64, float64) {
 	mean := utils.Mean(data)
 	std := utils.Std(data)
