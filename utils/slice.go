@@ -22,3 +22,13 @@ func Sort(data []float64, ascending ...bool) []float64 {
 	}
 	return data
 }
+
+// Contains returns a boolean if a given value is in the array.
+func Contains(data []float64, value float64) bool {
+	for _, i := range data {
+		if i == value {
+			return true
+		}
+	}
+	return false
+}
