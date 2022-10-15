@@ -6,6 +6,11 @@ import (
 	"math"
 )
 
+// KSTest (The Kolmogorov-Smirnov Test) allows testing whether two samples come from the same population.
+// With this feature, it can also be used to test normality.
+// In this test, normality is examined using the sample mean and sample variance.
+// It is mostly used in cases where N<50.
+// This function returns the calculated D value for the KS test.
 func KSTest(data []float64) float64 {
 	data = utils.Sort(data, true)
 	mean := utils.Mean(data)
