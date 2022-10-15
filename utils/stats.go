@@ -21,10 +21,20 @@ func Variance(data []float64) float64 {
 	for _, i := range data {
 		sum += math.Pow(i-mean, 2)
 	}
-	return sum / float64(len(data))
+	return sum / float64(len(data)-1)
 }
 
 // Std returns the standard deviation of a []float array
 func Std(data []float64) float64 {
 	return math.Sqrt(Variance(data))
+}
+
+// Max returns the maximum value of an array
+func Max(data []float64) float64 {
+	return Sort(data, false)[0]
+}
+
+// Min returns the minimum value of an array
+func Min(data []float64) float64 {
+	return Sort(data, true)[0]
 }
