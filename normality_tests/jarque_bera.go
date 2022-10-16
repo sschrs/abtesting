@@ -18,7 +18,7 @@ For more information https://en.wikipedia.org/wiki/Jarque–Bera_test
 */
 func JarqueBera(data []float64) (float64, float64) {
 	mean := utils.Mean(data)
-	std := utils.Std(data)
+	std := utils.Std(data, false)
 	moment_3 := 0.0
 	moment_4 := 0.0
 	for _, i := range data {
